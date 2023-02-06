@@ -22,12 +22,12 @@ def sign(sk: str, token: str, cookie: str):
     url = 'https://user-api.smzdm.com/checkin'
     timestamp = int(time.time())
     headers = {
-        'User-Agent': 'smzdm_android_V10.4.20 rv:860 (Redmi Note 3;Android10;zh)smzdmapp',
+        'user-agent': 'smzdm_android_V10.4.20 rv:860 (Redmi Note 3;Android10;zh)smzdmapp',
         'request_key': str(
             random.randint(10000000, 100000000) * 10000000000 + timestamp
         ),
-        'Cookie': cookie,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'cookie': cookie,
+        'content-type': 'application/x-www-form-urlencoded',
     }
     timestamp = timestamp - random.randint(0, 10)
     data = {
@@ -43,9 +43,7 @@ def sign(sk: str, token: str, cookie: str):
         'time': timestamp * 1000,
         'token': token,
     }
-    print(data)
-    res = requests.post(url, headers=headers, data=data).json()
-    return res
+    return requests.post(url, headers=headers, data=data).json()
 
 
 for user in user_tuple:
