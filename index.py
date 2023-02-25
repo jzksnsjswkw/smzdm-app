@@ -46,7 +46,7 @@ def get_headers_and_timestamp_wrapper():
 
     def get_headers_and_timestamp(cookie: str):
         headers = {
-            'User-Agent': 'smzdm_android_V10.4.20 rv:860 (Redmi Note 3;Android10;zh)smzdmapp',
+            'User-Agent': 'smzdm_android_V10.4.26 rv:866 (Redmi Note 3;Android10;zh)smzdmapp',
             'request_key': str(
                 random.randint(10000000, 100000000) * 10000000000 + int(time.time())
             ),
