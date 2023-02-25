@@ -9,7 +9,7 @@ user_tuple = (
     {
         'sk': '',
         'token': '',
-        'cookie': r'',
+        'cookie': '',
     },
 )
 
