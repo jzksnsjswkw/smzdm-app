@@ -1,0 +1,24 @@
+name : zdm chec kin
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build image"]
+    types:
+      - completed
+  schedule:
+    - cron: "30 0 * * *"
+    
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container:
+      image: enwaiax/smzdm_bot
+      env:
+        cookie: ${{ secrets.COOKIE }}
+        sk: ${{ secrets.SK }}
+        token: ${{ secrets.TOKEN }}
+
+    steps:
+      - name: Working
+        run: |
+          python /smzdm-app/index.py
